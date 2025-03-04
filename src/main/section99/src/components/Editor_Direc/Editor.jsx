@@ -3,30 +3,8 @@ import {useState,useEffect} from 'react';
 import "./Editor.css";
 import EmotionItem from "../EmotionItem_Direc/EmotionItem.jsx";
 import Button from "../Button_Direc/Button.jsx";
+import {emotionList} from "../../util/constants.js"
 
-
-const emotionList = [
-    {
-        emotionId: 1,
-        emotionName: "완전 좋음"
-    },
-    {
-        emotionId: 2,
-        emotionName: "좋음"
-    },
-    {
-        emotionId: 3,
-        emotionName: "보통"
-    },
-    {
-        emotionId: 4,
-        emotionName: "나쁨"
-    },
-    {
-        emotionId: 5,
-        emotionName: "완전 나쁨"
-    }
-];
 
 const getStringDate = (targetDate) => {
     let year = targetDate.getFullYear();
