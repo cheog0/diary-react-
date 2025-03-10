@@ -4,25 +4,14 @@ import Button from '../components/Button_Direc/Button.jsx';
 import Editor from '../components/Editor_Direc/Editor.jsx';
 import {useContext, useEffect, useState} from "react";
 import {DiaryDispatchContext, DiaryStateContext} from "../App.jsx";
+import useDiary from '../hooks/useDiary.jsx';
 
 const Edit = () => {
     const nav = useNavigate();
     const params = useParams();
     const {onDelete, onUpdate} = useContext(DiaryDispatchContext)
-    const data = useContext(DiaryStateContext)
-    const [curDiaryItem, setCurDiaryItem] = useState();
 
-    useEffect(() => {
-        const currentDiaryItem =
-            data.find((item) => String(item.id) === String(params.id));
-
-        if (!currentDiaryItem) {
-            window.alert("존재하지 않는 일기입니다.");
-            nav("/");  // replace를 제거하거나 false로 설정
-        }
-
-        setCurDiaryItem(currentDiaryItem);
-    }, [params.id]);
+    const curDiaryItem = useDiary(params.id);
 
 
     const onClickDelete = () => {
@@ -49,7 +38,7 @@ const Edit = () => {
             <div>
                 <Header
                     title={"일기 수정하기"}
-                    leftChild={<Button onBtnClick={() => nav(-1)} text={"< 뒤로가기"}/>}
+                    leftChild={<Button text={"< 뒤로가기"} onBtnClick={() => nav('/')}/>}
                     rightChild={<Button onBtnClick={onClickDelete} text={"삭제하기"} type={"NEGATIVE"}/>}
                 />
             </div>

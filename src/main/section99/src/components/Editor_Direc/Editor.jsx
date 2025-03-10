@@ -4,21 +4,9 @@ import "./Editor.css";
 import EmotionItem from "../EmotionItem_Direc/EmotionItem.jsx";
 import Button from "../Button_Direc/Button.jsx";
 import {emotionList} from "../../util/constants.js"
+import {getStringDate} from '../../util/get-stringed-date.js';
 
 
-const getStringDate = (targetDate) => {
-    let year = targetDate.getFullYear();
-    let month = targetDate.getMonth() + 1;
-    let date = targetDate.getDate();
-
-    if (month < 10) {
-        month = "0" + month;
-    }
-    if (date < 10) {
-        date = "0" + date;
-    }
-    return `${year}-${month}-${date}`;
-}
 
 const Editor = ({ initData, onSubmit }) => {
     const [input, setInput] = useState({
