@@ -1,29 +1,56 @@
 .EmotionItem {
-    background-color: rgb(236,236,236);
-    padding: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+  background-color: rgb(236, 236, 236);
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
+/* 감정 아이템 이미지 */
 .EmotionItem .emotion_img {
-    width: 50%;
-    margin-bottom: 10px;
+  width: 50%;
+  margin-bottom: 10px;
 }
 
+/* 감정 아이템 선택 시 배경 색상 */
 .EmotionItem_on_1 {
-    background-color: rgb(100,201,100);
+  background-color: rgb(100, 201, 100);
 }
 .EmotionItem_on_2 {
-    background-color: rgb(157,215,114);
+  background-color: rgb(157, 215, 114);
 }
 .EmotionItem_on_3 {
-    background-color: rgb(253,206,23);
+  background-color: rgb(253, 206, 23);
 }
 .EmotionItem_on_4 {
-    background-color: rgb(253,132,70);
+  background-color: rgb(253, 132, 70);
 }
 .EmotionItem_on_5 {
-    background-color: rgb(253,86,95);
+  background-color: rgb(253, 86, 95);
 }
 
+/* 다크모드 스타일 */
+.dark .EmotionItem {
+  background-color: #333; /* 다크모드 배경색 */
+  color: #e2e8f0; /* 다크모드 글자색 */
+}
+
+.dark .EmotionItem_on_1 {
+  background-color: #4caf50; /* 다크모드 선택 시 배경색 */
+}
+
+.dark .EmotionItem_on_2 {
+  background-color: #9dd772; /* 다크모드 선택 시 배경색 */
+}
+
+.dark .EmotionItem_on_3 {
+  background-color: #fdbf00; /* 다크모드 선택 시 배경색 */
+}
+
+.dark .EmotionItem_on_4 {
+  background-color: #f98346; /* 다크모드 선택 시 배경색 */
+}
+
+.dark .EmotionItem_on_5 {
+  background-color: #fd565f; /* 다크모드 선택 시 배경색 */
+}

@@ -30,7 +30,26 @@
     gap: 2%;
 }
 
-.Editor .button_section{
+.Editor .button_section {
     display: flex;
-    justify-content : space-between;
+    justify-content: space-between;
+}
+
+/* 다크모드 배경색 및 글자색 변경 */
+.dark .Editor > section > input,
+.dark .Editor > section > textarea {
+    background-color: #333; /* 다크모드 배경색 */
+    color: #e2e8f0; /* 다크모드 글자 색 */
+    border: 1px solid #444; /* 다크모드에서 테두리 색상 */
+}
+
+/* 취소 및 작성완료 버튼 */
+.dark .Editor .button_section button {
+    background-color: #444; /* 다크모드 버튼 배경 */
+    color: #e2e8f0; /* 다크모드 버튼 글자 색 */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
 }
