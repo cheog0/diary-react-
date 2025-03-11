@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
-import { DiaryStateContext } from "../App.jsx";
+import { DiaryStateContext, ThemeContext } from "../App.jsx";
 import Header from "../components/Header_Direc/Header.jsx";
 import Button from "../components/Button_Direc/Button.jsx";
 import DiaryList from "../components/DiaryList_Direc/DiaryList.jsx";
+import "../index.css";
 
 const getMonthlyData = (data, pivotDate) => {
   const beginTime = new Date(
@@ -29,6 +30,9 @@ const getMonthlyData = (data, pivotDate) => {
 const Home = () => {
   const data = useContext(DiaryStateContext);
 
+  const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
   const [pivotDate, setPivotDate] = useState(new Date());
 
   const monthlyData = getMonthlyData(data, pivotDate);
@@ -40,7 +44,15 @@ const Home = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
   };
   return (
-    <div>
+    <div className={isDarkMode ? "dark" : ""}>
+      <header className="p-4 shadow-md">
+        <div className="button-container">
+          <button onClick={toggleDarkMode}>
+            {isDarkMode ? "🌙 다크모드" : "☀️ 라이트모드"}
+          </button>
+        </div>
+      </header>
+
       <Header
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
         leftChild={<Button text={"<"} onBtnClick={onDecreaseButton} />}

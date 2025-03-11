@@ -56,7 +56,7 @@ button {
 .button-container {
   display: flex;
   justify-content: flex-end; /* 버튼을 오른쪽으로 정렬 */
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .dark button {
